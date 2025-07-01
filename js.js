@@ -1,3 +1,5 @@
+const output = document.getElementById('Stuff');
+
 function person(name,locat,tg,yearsEXP,edu,skills,certif,lanspeek,url,relokat,remote,soft,intern){
     this.name = name;
     this.locat =locat;
@@ -28,4 +30,24 @@ let app1 = new person(
     false,
     ["Teamwork", "Adaptability"],
     false
+    
 );
+app1.bio = function(){
+    return `
+    ${this.name}
+    Location: ${this.locat}
+    Target role: ${this.tg}
+    Years of exp: ${this.yearsEXP}
+    Education: ${this.edu}
+    Skills: ${this.skills.join(", ")}
+    Certifications: ${this.certif.join(", ")}
+    Languages: ${this.lanspeek.join(", ")}
+    Portfolio URL: ${this.url ?? "N/A"}
+    Willing to Relocate: ${this.relokat}
+    Remote Work Preferred: ${this.remote}
+    Soft Skills: ${this.soft.join(", ")}
+    Open to Internships: ${this.intern}
+    `;
+}
+
+output.innerText = app1.bio();
