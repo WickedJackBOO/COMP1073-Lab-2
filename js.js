@@ -1,5 +1,6 @@
-const output = document.getElementById('Stuff');
+const output = document.getElementById('Stuff');// get the element with the id 'Stuff'
 
+// constructor function to create a person object
 function person(name,locat,tg,yearsEXP,edu,skills,certif,lanspeek,url,relokat,remote,soft,intern){
     this.name = name;
     this.locat =locat;
@@ -15,7 +16,7 @@ function person(name,locat,tg,yearsEXP,edu,skills,certif,lanspeek,url,relokat,re
     this.soft = soft,
     this.intern = intern
 }
-
+// create a new person object called app1 with liam's info
 let app1 = new person(
     "Liam O'Reilly",
     "Halifax, NS",
@@ -32,6 +33,7 @@ let app1 = new person(
     false
     
 );
+// add a method to app1 that returns a text version of the bio
 app1.bio = function(){
     return `
     ${this.name}
@@ -49,5 +51,5 @@ app1.bio = function(){
     Open to Internships: ${this.intern}
     `;
 }
-
+// display the bio in the html element (keeps newlines in browser)
 output.innerText = app1.bio();
